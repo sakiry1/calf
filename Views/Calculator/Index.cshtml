@@ -1,0 +1,43 @@
+﻿@model CalculatorClass;
+@{
+    ViewData["Title"] = "Calculator Page";
+    //  ViewBag.cosa;
+
+
+}
+
+<div class="col-lg-12">
+    <h1>Calculator</h1>
+    <p>Ingrese los números que desea calcular:</p>
+    @using (Html.BeginForm())
+    {
+        <form asp-action="create">
+            <div class="form-group">
+
+                <div class="col-xs-2">
+                    <label for="num1">Número</label>
+                    <input class="form-control" id="num1"asp-for="Valor1">
+                </div>
+                <div class="col-xs-2">
+                    <label for="num2">Número</label>
+                    <input class="form-control" id="num2"asp-for="Valor2">
+                </div>
+                <div class="col-xs-1">
+                    <label for="opcion">Operadores:</label>
+                    <select asp-for="Operador" class="form-control" id="opcion" >
+                        <option selected>+</option>
+                        <option>-</option>
+                        <option>x</option>
+                        <option>/</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="enviar">OK</button>
+            </div>
+        </form>
+        
+        <div class="col-xs-1">
+            <label for="resultado">Resultado:</label>
+            <input type="text" class="form-control" id="enviar">
+        </div>
+    }
+</div>
